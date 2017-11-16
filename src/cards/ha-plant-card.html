@@ -57,11 +57,11 @@
 
 <script>
 {
-  var _SENSORS = ['moisture', 'temperature', 'brightness', 'conductivity', 'battery'];
+  var _SENSORS = ['moisture', 'temperature', 'max_brightness', 'conductivity', 'battery'];
   var _ICONS = {
     moisture: 'mdi:water',
     temperature: 'mdi:thermometer',
-    brightness: 'mdi:white-balance-sunny',
+    max_brightness: 'mdi:white-balance-sunny',
     conductivity: 'mdi:emoticon-poop',
     battery: 'mdi:battery'
   };
@@ -109,10 +109,10 @@
     }
 
     computeUOM(stateObj, sensor) {
-      if (typeof stateObj.attributes.unit_of_measurement[sensor] === 'undefined') {
+      if (typeof stateObj.attributes.unit_of_measurement_dict[sensor] === 'undefined') {
         return '';
       }
-      return stateObj.attributes.unit_of_measurement[sensor];
+      return stateObj.attributes.unit_of_measurement_dict[sensor];
     }
 
     computeDisabled(stateObj, sensor) {
